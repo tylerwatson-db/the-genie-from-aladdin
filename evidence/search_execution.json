@@ -1,0 +1,22 @@
+{
+  "description": "Lakebase Search execution evidence: search_experiments tool retrieves from synced UC table in Lakebase Postgres (not a separate store)",
+  "database": "nimbus_app",
+  "schema": "app",
+  "table": "experiments",
+  "source": "synced from solution_builder.nimbus.gold_experiment_outcomes via Lakehouse Sync",
+  "search_query": "SELECT experiment_id, experiment_name, variant, feature_area, observed_lift, description FROM app.experiments WHERE experiment_name ILIKE '%checkout%' OR description ILIKE '%checkout%' LIMIT 5",
+  "executed_at": "2026-08-28T15:15:00Z",
+  "endpoint": "ep-nameless-math-d8usk8ns.database.us-east-2.cloud.databricks.com",
+  "results": [
+    {"experiment_id": "EXP-0000009", "experiment_name": "Checkout variant_a [gen_z]", "variant": "variant_a", "feature_area": "checkout", "observed_lift": 0.0225, "description": "Experiment on the checkout flow, variant_a, tested on gen_z / android. WON: lifted conversion by 2.25 points."},
+    {"experiment_id": "EXP-0000011", "experiment_name": "Checkout variant_b [millennial]", "variant": "variant_b", "feature_area": "checkout", "observed_lift": 0.0009, "description": "Experiment on the checkout flow, variant_b, tested on millennial / web. Did not lift conversion."},
+    {"experiment_id": "EXP-0000016", "experiment_name": "Checkout variant_a [gen_x]", "variant": "variant_a", "feature_area": "checkout", "observed_lift": 0.0015, "description": "Experiment on the checkout flow, variant_a, tested on gen_x / web. Did not lift conversion."},
+    {"experiment_id": "EXP-0000017", "experiment_name": "Checkout variant_a [boomer]", "variant": "variant_a", "feature_area": "checkout", "observed_lift": 0.0234, "description": "Experiment on the checkout flow, variant_a, tested on boomer / android. WON: lifted conversion by 2.34 points."},
+    {"experiment_id": "EXP-0000020", "experiment_name": "Checkout variant_b [gen_z]", "variant": "variant_b", "feature_area": "checkout", "observed_lift": 0.0084, "description": "Experiment on the checkout flow, variant_b, tested on gen_z / android. WON: lifted conversion by 0.84 points."}
+  ],
+  "segment_summary_search": {
+    "query": "SELECT segment_id, cohort, platform, segment_summary FROM app.segment_position WHERE segment_summary ILIKE '%checkout%' AND segment_id = 'SEG-0000214'",
+    "result": {"segment_id": "SEG-0000214", "cohort": "gen_z", "platform": "android", "segment_summary": "gen_z cohort on android in EMEA. Conversion sliding since the checkout change; a proven variant may recover it."}
+  },
+  "note": "Both searches hit the same Lakebase Postgres tables that hold synced UC data. No separate vector store or external search service. The agent tool search_experiments calls ILIKE on the synced experiment catalog directly in Lakebase."
+}
