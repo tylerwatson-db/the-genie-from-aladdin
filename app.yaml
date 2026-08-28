@@ -1,0 +1,9 @@
+name: nimbus-growth-desk
+description: Conversion slide detection and feature-ship decision app
+features:
+  - lakebase
+lakebase:
+  postgres:
+    project: nimbus-growth
+    branch: production
+    database: nimbus_app
