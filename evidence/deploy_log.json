@@ -1,0 +1,31 @@
+{
+  "app_name": "nimbus-growth-desk",
+  "app_url": "https://nimbus-growth-desk-7474650595179315.aws.databricksapps.com",
+  "app_status": {
+    "state": "RUNNING",
+    "message": "App is running"
+  },
+  "active_deployment": {
+    "deployment_id": "01f1a2f1816a1afd9a83fcf159c40123",
+    "source_code_path": "/Workspace/Shared/nimbus/app",
+    "mode": "SNAPSHOT",
+    "status": {
+      "state": "SUCCEEDED",
+      "message": "App started successfully"
+    },
+    "create_time": "2026-08-28T15:02:36Z",
+    "update_time": "2026-08-28T15:03:45Z"
+  },
+  "compute_status": {
+    "state": "ACTIVE",
+    "message": "App compute is running."
+  },
+  "compute_size": "MEDIUM",
+  "creator": "tyler.watson@databricks.com",
+  "create_time": "2026-08-27T16:03:54Z",
+  "service_principal_name": "app-4yg934 nimbus-growth-desk",
+  "lakebase_project": "nimbus-growth",
+  "lakebase_branch": "production",
+  "lakebase_database": "nimbus_app",
+  "lakebase_endpoint": "ep-nameless-math-d8usk8ns.database.us-east-2.cloud.databricks.com"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "b55dd12f-dd6d-4880-b783-8c8fa2fee14b",
+    "segment_id": "SEG-0000214",
+    "action_type": "ship_proven_variant",
+    "target_experiment_id": "EXP-0000009",
+    "flag_key": "checkout_flow",
+    "variant": "proven_variant",
+    "predicted_conversion_lift": 0.01575,
+    "status": "approved",
+    "approved_by": "praveen.gottam@databricks.com",
+    "audit_trail": [{"at": "2026-08-27T19:04:58.597Z", "by": "praveen.gottam@databricks.com", "action": "approved"}],
+    "created_at": "2026-08-27T19:04:58.600Z",
+    "decided_at": "2026-08-27T19:04:58.597Z"
+  },
+  {
+    "id": "f94a0a5f-6035-441a-812a-1d00cafb6097",
+    "segment_id": "SEG-0000214",
+    "action_type": "ship_proven_variant",
+    "target_experiment_id": "EXP-0000009",
+    "flag_key": "checkout_flow",
+    "variant": "treatment",
+    "predicted_conversion_lift": 0.01575,
+    "status": "approved",
+    "approved_by": "tyler.watson@databricks.com",
+    "audit_trail": [{"at": "2026-08-27T19:05:04.376Z", "by": "tyler.watson@databricks.com", "action": "approved"}],
+    "created_at": "2026-08-27T19:05:04.378Z",
+    "decided_at": "2026-08-27T19:05:04.376Z"
+  }
+]
